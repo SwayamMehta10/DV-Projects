@@ -1,0 +1,100 @@
+short_name,age,dob,height_cm,weight_kg,nationality,club_name,league_name,overall,value_eur,wage_eur,player_positions,preferred_foot,international_reputation,weak_foot,skill_moves,release_clause_eur,team_position,team_jersey_number,joined,contract_valid_until,nation_position,nation_jersey_number
+L. Messi,33,24-06-1987,170,72,Argentina,FC Barcelona,Spain Primera Division,93,67500000,560000,"RW, ST, CF",Left,5,4,4,138400000,CAM,10,01-07-2004,2021,RW,10
+Cristiano Ronaldo,35,05-02-1985,187,83,Portugal,Juventus,Italian Serie A,92,46000000,220000,"ST, LW",Right,5,4,5,75900000,LS,7,10-07-2018,2022,LS,7
+J. Oblak,27,07-01-1993,188,87,Slovenia,Atlético Madrid,Spain Primera Division,91,75000000,125000,GK,Right,3,3,1,159400000,GK,13,16-07-2014,2023,GK,1
+R. Lewandowski,31,21-08-1988,184,80,Poland,FC Bayern München,German 1. Bundesliga,91,80000000,240000,ST,Right,4,4,4,132000000,ST,9,01-07-2014,2023,,
+Neymar Jr,28,05-02-1992,175,68,Brazil,Paris Saint-Germain,French Ligue 1,91,90000000,270000,"LW, CAM",Right,5,5,5,166500000,LW,10,03-08-2017,2022,,
+K. De Bruyne,29,28-06-1991,181,70,Belgium,Manchester City,English Premier League,91,87000000,370000,"CAM, CM",Right,4,5,4,161000000,RCM,17,30-08-2015,2023,RCM,7
+K. Mbappé,21,20-12-1998,178,73,France,Paris Saint-Germain,French Ligue 1,90,105500000,160000,"ST, LW, RW",Right,3,4,5,203100000,LS,7,01-07-2018,2022,RM,10
+M. ter Stegen,28,30-04-1992,187,85,Germany,FC Barcelona,Spain Primera Division,90,69500000,260000,GK,Right,3,4,1,147700000,GK,1,01-07-2014,2022,SUB,22
+V. van Dijk,28,08-07-1991,193,92,Netherlands,Liverpool,English Premier League,90,75500000,210000,CB,Right,3,3,2,145300000,LCB,4,01-01-2018,2023,LCB,4
+Alisson,27,02-10-1992,191,91,Brazil,Liverpool,English Premier League,90,62500000,160000,GK,Right,3,3,1,120300000,GK,1,19-07-2018,2024,,
+S. Mané,28,10-04-1992,175,69,Senegal,Liverpool,English Premier League,90,78000000,250000,LW,Right,3,4,4,144300000,LW,10,01-07-2016,2023,,
+M. Salah,28,15-06-1992,175,71,Egypt,Liverpool,English Premier League,90,78000000,250000,RW,Left,3,3,4,144300000,RW,11,01-07-2017,2023,RW,10
+T. Courtois,28,11-05-1992,199,96,Belgium,Real Madrid,Spain Primera Division,89,56000000,250000,GK,Left,4,3,1,119000000,GK,1,09-08-2018,2024,GK,1
+S. Agüero,32,02-06-1988,173,70,Argentina,Manchester City,English Premier League,89,53000000,300000,ST,Right,4,4,4,98100000,SUB,10,28-07-2011,2021,ST,9
+Sergio Ramos,34,30-03-1986,184,82,Spain,Real Madrid,Spain Primera Division,89,24500000,300000,CB,Right,4,3,3,50200000,LCB,4,01-08-2005,2021,RCB,15
+K. Benzema,32,19-12-1987,185,81,France,Real Madrid,Spain Primera Division,89,53000000,350000,"CF, ST",Right,4,4,4,108700000,CF,9,09-07-2009,2022,,
+M. Neuer,34,27-03-1986,193,92,Germany,FC Bayern München,German 1. Bundesliga,89,29000000,125000,GK,Right,5,4,1,47900000,GK,1,01-07-2011,2023,GK,1
+Casemiro,28,23-02-1992,185,84,Brazil,Real Madrid,Spain Primera Division,89,59500000,310000,CDM,Right,3,3,2,122000000,CDM,14,11-07-2013,2023,,
+Ederson,26,17-08-1993,188,86,Brazil,Manchester City,English Premier League,88,53500000,195000,GK,Left,2,3,1,103000000,GK,31,01-07-2017,2024,,
+R. Sterling,25,08-12-1994,170,69,England,Manchester City,English Premier League,88,72500000,270000,"LW, RW",Right,3,3,4,139600000,LW,7,14-07-2015,2023,LW,7
+J. Kimmich,25,08-02-1995,176,73,Germany,FC Bayern München,German 1. Bundesliga,88,65000000,145000,"CDM, RB",Right,3,4,3,112100000,RDM,6,01-07-2015,2023,RCM,6
+H. Kane,26,28-07-1993,188,89,England,Tottenham Hotspur,English Premier League,88,71000000,220000,ST,Right,3,4,3,140200000,ST,10,01-07-2010,2024,ST,9
+P. Dybala,26,15-11-1993,177,75,Argentina,Juventus,Italian Serie A,88,71000000,190000,"CF, CAM",Left,3,3,4,122500000,RS,10,01-07-2015,2022,LW,21
+S. Handanovič,35,14-07-1984,193,92,Slovenia,Inter,Italian Serie A,88,16000000,100000,GK,Right,3,3,1,26400000,GK,1,01-07-2012,2021,,
+T. Kroos,30,04-01-1990,183,76,Germany,Real Madrid,Spain Primera Division,88,55000000,310000,CM,Right,4,5,3,112800000,LCM,8,17-07-2014,2023,LCM,8
+E. Hazard,29,07-01-1991,175,74,Belgium,Real Madrid,Spain Primera Division,88,58000000,350000,"LW, ST",Right,4,4,4,118900000,LW,7,01-07-2019,2024,LF,10
+N. Kanté,29,29-03-1991,168,70,France,Chelsea,English Premier League,88,51000000,190000,"CDM, CM",Right,3,3,2,96900000,RDM,7,16-07-2016,2023,LCM,13
+J. Sancho,20,25-03-2000,180,76,England,Borussia Dortmund,German 1. Bundesliga,87,69500000,82000,"RM, LM, CAM",Right,3,3,5,132100000,RS,7,31-08-2017,2023,RW,11
+T. Alexander-Arnold,21,07-10-1998,180,69,England,Liverpool,English Premier League,87,60000000,110000,RB,Right,2,4,3,115500000,RB,66,07-10-2015,2024,RB,2
+Bruno Fernandes,25,08-09-1994,179,69,Portugal,Manchester United,English Premier League,87,63000000,195000,"CAM, CM",Right,2,4,4,124400000,CAM,18,30-01-2020,2025,RCM,16
+A. Laporte,26,27-05-1994,189,85,France,Manchester City,English Premier League,87,56000000,200000,CB,Left,2,3,2,107800000,LCB,14,30-01-2018,2024,,
+Fabinho,26,23-10-1993,188,78,Brazil,Liverpool,English Premier League,87,54500000,155000,CDM,Right,3,2,3,104900000,CDM,3,01-07-2018,2023,,
+A. Robertson,26,11-03-1994,178,64,Scotland,Liverpool,English Premier League,87,53000000,155000,LB,Left,3,2,3,102000000,LB,26,21-07-2017,2024,LB,3
+Bernardo Silva,25,10-08-1994,173,64,Portugal,Manchester City,English Premier League,87,60000000,230000,"RW, CAM, CM",Left,2,3,4,115500000,LCM,20,01-07-2017,2025,CAM,10
+G. Chiellini,35,14-08-1984,187,85,Italy,Juventus,Italian Serie A,87,15500000,94000,CB,Left,4,3,2,25600000,LCB,3,01-07-2005,2021,LCB,16
+H. Lloris,33,26-12-1986,188,82,France,Tottenham Hotspur,English Premier League,87,27000000,125000,GK,Left,4,1,1,51300000,GK,1,31-08-2012,2022,GK,1
+L. Suárez,33,24-01-1987,182,86,Uruguay,FC Barcelona,Spain Primera Division,87,31500000,280000,ST,Right,5,4,3,64600000,SUB,9,11-07-2014,2021,,
+L. Modrić,34,09-09-1985,172,66,Croatia,Real Madrid,Spain Primera Division,87,24500000,260000,CM,Right,4,4,4,50200000,RCM,10,01-08-2012,2021,,
+A. Di María,32,14-02-1988,180,69,Argentina,Paris Saint-Germain,French Ligue 1,87,39000000,160000,"RW, LW",Left,4,2,5,72200000,RW,11,06-08-2015,2021,,
+W. Szczęsny,30,18-04-1990,195,90,Poland,Juventus,Italian Serie A,87,34000000,105000,GK,Right,3,3,1,56100000,GK,1,19-07-2017,2024,GK,1
+P. Aubameyang,31,18-06-1989,187,80,Gabon,Arsenal,English Premier League,87,45000000,170000,"ST, LW",Right,3,4,4,85500000,LW,14,31-01-2018,2021,,
+Sergio Busquets,31,16-07-1988,189,76,Spain,FC Barcelona,Spain Primera Division,87,38000000,240000,CDM,Right,4,3,3,77900000,SUB,5,01-09-2008,2023,SUB,5
+C. Immobile,30,20-02-1990,185,85,Italy,Lazio,Italian Serie A,87,48500000,125000,ST,Right,3,4,3,82500000,RS,17,27-07-2016,2025,ST,17
+K. Navas,33,15-12-1986,185,80,Costa Rica,Paris Saint-Germain,French Ligue 1,87,27000000,110000,GK,Right,3,3,1,50000000,GK,1,02-09-2019,2023,,
+A. Griezmann,29,21-03-1991,176,73,France,FC Barcelona,Spain Primera Division,87,50500000,290000,"ST, CF, LW",Left,4,3,4,103500000,ST,7,12-07-2019,2024,CF,7
+H. Son,27,08-07-1992,183,78,Korea Republic,Tottenham Hotspur,English Premier League,87,52500000,165000,"LM, CF",Right,3,5,4,99800000,LM,7,28-08-2015,2023,,
+Roberto Firmino,28,02-10-1991,181,76,Brazil,Liverpool,English Premier League,87,52000000,190000,CF,Right,3,4,5,96200000,CF,9,06-07-2015,2023,,
+R. Varane,27,25-04-1993,191,81,France,Real Madrid,Spain Primera Division,86,46500000,220000,CB,Right,3,3,2,98800000,RCB,5,01-07-2011,2022,RCB,4
+P. Pogba,27,15-03-1993,191,84,France,Manchester United,English Premier League,86,50000000,190000,"CM, CDM",Right,4,4,5,98800000,RDM,6,09-08-2016,2021,,
+M. Verratti,27,05-11-1992,165,60,Italy,Paris Saint-Germain,French Ligue 1,86,50000000,135000,"CM, CDM",Right,3,4,4,96300000,LCM,6,18-07-2012,2024,LCM,5
+A. Gómez,32,15-02-1988,167,68,Argentina,Atalanta,Italian Serie A,86,34500000,100000,"CAM, CF, ST",Right,3,4,4,58700000,LF,10,02-09-2014,2022,,
+Piqué,33,02-02-1987,194,85,Spain,FC Barcelona,Spain Primera Division,86,21000000,220000,CB,Right,4,3,2,43100000,RCB,3,01-07-2008,2022,,
+David Silva,34,08-01-1986,173,67,Spain,Real Sociedad,Spain Primera Division,86,22500000,58000,"CAM, CM",Left,4,2,4,47300000,CAM,21,17-08-2020,2022,,
+Y. Sommer,31,17-12-1988,183,79,Switzerland,Borussia Mönchengladbach,German 1. Bundesliga,86,28500000,55000,GK,Right,3,4,1,48500000,GK,1,01-07-2014,2023,GK,1
+M. Hummels,31,16-12-1988,191,94,Germany,Borussia Dortmund,German 1. Bundesliga,86,33000000,93000,CB,Right,4,3,3,56100000,CB,15,01-07-2019,2022,,
+J. Henderson,30,17-06-1990,182,80,England,Liverpool,English Premier League,86,36500000,140000,"CDM, CM",Right,2,3,3,67500000,RCM,14,09-06-2011,2023,RCM,8
+Jordi Alba,31,21-03-1989,170,68,Spain,FC Barcelona,Spain Primera Division,86,32000000,220000,LB,Left,3,3,3,65600000,LB,18,01-07-2012,2024,SUB,18
+T. Müller,30,13-09-1989,186,75,Germany,FC Bayern München,German 1. Bundesliga,86,42000000,130000,"CAM, RM, RW",Right,4,4,3,69300000,CAM,25,10-08-2008,2023,,
+De Gea,29,07-11-1990,192,82,Spain,Manchester United,English Premier League,86,31500000,150000,GK,Right,4,3,1,59900000,GK,1,01-07-2011,2023,GK,1
+Carvajal,28,11-01-1992,173,73,Spain,Real Madrid,Spain Primera Division,86,38000000,230000,RB,Right,3,3,3,77900000,RB,2,05-07-2013,2022,SUB,2
+J. Vardy,33,11-01-1987,179,74,England,Leicester City,English Premier League,86,28000000,160000,ST,Right,3,3,3,53200000,ST,9,01-05-2012,2023,,
+K. Havertz,21,11-06-1999,188,83,Germany,Chelsea,English Premier League,85,57000000,105000,"CAM, RM, CF",Left,3,4,4,119700000,RM,29,04-09-2020,2025,SUB,27
+G. Donnarumma,21,25-02-1999,196,90,Italy,Milan,Italian Serie A,85,41500000,34000,GK,Right,3,3,1,78900000,GK,99,01-07-2015,2021,GK,21
+M. de Ligt,20,12-08-1999,189,89,Netherlands,Juventus,Italian Serie A,85,49500000,80000,CB,Right,3,4,2,91600000,SUB,4,18-07-2019,2024,SUB,3
+M. Rashford,22,31-10-1997,186,70,England,Manchester United,English Premier League,85,53000000,150000,"LM, ST",Right,2,4,5,111300000,LM,10,01-07-2014,2023,SUB,10
+L. Sané,24,11-01-1996,183,75,Germany,FC Bayern München,German 1. Bundesliga,85,51500000,100000,LM,Left,2,3,4,88800000,LM,10,15-07-2020,2025,LW,19
+F. de Jong,23,12-05-1997,180,74,Netherlands,FC Barcelona,Spain Primera Division,85,50500000,190000,CM,Right,3,3,4,107300000,LCM,21,01-07-2019,2024,LDM,21
+Marquinhos,26,14-05-1994,183,75,Brazil,Paris Saint-Germain,French Ligue 1,85,44000000,115000,"CB, CDM",Right,3,3,3,84700000,RCB,5,19-07-2013,2024,,
+C. Lenglet,25,17-06-1995,186,81,France,FC Barcelona,Spain Primera Division,85,44500000,190000,CB,Left,2,4,2,94600000,LCB,15,12-07-2018,2023,LCB,5
+S. Milinković-Savić,25,27-02-1995,191,76,Serbia,Lazio,Italian Serie A,85,49000000,94000,"CM, CDM, CAM",Right,2,4,4,87000000,RCM,21,06-08-2015,2023,,
+M. Škriniar,25,11-02-1995,188,80,Slovakia,Inter,Italian Serie A,85,44500000,130000,CB,Right,1,4,2,76800000,LCB,37,07-07-2017,2023,,
+M. Depay,26,13-02-1994,176,78,Netherlands,Olympique Lyonnais,French Ligue 1,85,48500000,115000,"CF, LW, CAM",Right,3,3,5,95800000,RS,11,20-01-2017,2021,ST,10
+T. Werner,24,06-03-1996,180,76,Germany,Chelsea,English Premier League,85,49500000,135000,ST,Right,3,4,3,97800000,ST,11,01-07-2020,2025,ST,9
+Rodri,24,22-06-1996,191,82,Spain,Manchester City,English Premier League,85,44000000,145000,"CDM, CM",Right,2,4,3,84700000,CDM,16,04-07-2019,2024,CDM,16
+B. Leno,28,04-03-1992,190,82,Germany,Arsenal,English Premier League,85,33500000,105000,GK,Right,3,3,1,66200000,GK,1,01-07-2018,2023,SUB,12
+S. Gnabry,24,14-07-1995,175,75,Germany,FC Bayern München,German 1. Bundesliga,85,47500000,100000,"RM, LM, RW",Right,3,4,4,81900000,RM,7,01-07-2017,2023,RW,20
+Ricardo Pereira,26,06-10-1993,175,70,Portugal,Leicester City,English Premier League,85,40500000,120000,RB,Right,3,4,3,80000000,SUB,21,09-06-2018,2023,RB,15
+R. Lukaku,27,13-05-1993,191,94,Belgium,Inter,Italian Serie A,85,45000000,165000,ST,Left,3,4,3,77600000,RS,9,08-08-2019,2024,ST,9
+Luis Alberto,27,28-09-1992,183,74,Spain,Lazio,Italian Serie A,85,44000000,99000,"CAM, CM, CF",Right,2,3,4,78100000,LCM,10,31-08-2016,2022,,
+M. Icardi,27,19-02-1993,181,75,Argentina,Paris Saint-Germain,French Ligue 1,85,45000000,135000,ST,Right,3,4,3,86600000,RS,9,08-06-2020,2024,,
+H. Ziyech,27,19-03-1993,181,65,Morocco,Chelsea,English Premier League,85,44000000,140000,"CAM, RW",Left,3,2,5,86900000,SUB,22,01-07-2020,2025,,
+Thiago Silva,35,22-09-1984,183,79,Brazil,Chelsea,English Premier League,85,11500000,93000,CB,Right,4,3,2,21900000,SUB,6,28-08-2020,2021,,
+D. Mertens,33,06-05-1987,169,61,Belgium,Napoli,Italian Serie A,85,24000000,115000,"CF, ST",Right,3,4,4,40800000,ST,14,01-07-2013,2022,RF,14
+M. Pjanić,30,02-04-1990,178,72,Bosnia Herzegovina,FC Barcelona,Spain Primera Division,85,35500000,220000,"CM, CDM",Right,3,4,3,72800000,RCM,8,24-08-2020,2024,,
+G. Wijnaldum,29,11-11-1990,175,69,Netherlands,Liverpool,English Premier League,85,37000000,150000,CM,Right,3,4,4,68500000,LCM,5,22-07-2016,2021,CAM,8
+D. Godín,34,16-02-1986,187,78,Uruguay,Inter,Italian Serie A,85,14500000,135000,CB,Right,3,3,2,23900000,RCB,2,01-07-2019,2022,,
+T. Alderweireld,31,02-03-1989,186,81,Belgium,Tottenham Hotspur,English Premier League,85,28500000,130000,CB,Right,3,3,2,54200000,RCB,4,08-07-2015,2023,RCB,2
+L. Bonucci,33,01-05-1987,190,85,Italy,Juventus,Italian Serie A,85,18000000,110000,CB,Right,3,4,2,29700000,CB,19,02-08-2018,2024,RCB,19
+P. Gulácsi,30,06-05-1990,191,86,Hungary,RB Leipzig,German 1. Bundesliga,85,26000000,65000,GK,Right,2,2,1,44200000,GK,1,01-07-2015,2023,GK,1
+M. Reus,31,31-05-1989,180,71,Germany,Borussia Dortmund,German 1. Bundesliga,85,34000000,94000,"CAM, CF",Right,4,4,4,57800000,RCM,11,01-07-2012,2023,,
+K. Walker,30,28-05-1990,183,70,England,Manchester City,English Premier League,85,30500000,170000,RB,Right,3,2,3,56400000,RB,2,14-07-2017,2024,,
+Thiago,29,11-04-1991,174,70,Spain,Liverpool,English Premier League,85,37000000,150000,"CM, CDM",Right,3,3,5,68500000,SUB,6,18-09-2020,2024,RCM,10
+Parejo,31,16-04-1989,182,74,Spain,Villarreal CF,Spain Primera Division,85,33000000,59000,CM,Right,2,4,3,69300000,RCM,5,12-08-2020,2024,,
+C. Eriksen,28,14-02-1992,181,76,Denmark,Inter,Italian Serie A,85,39000000,155000,"CAM, CM, RM",Right,3,5,4,64400000,CAM,24,28-01-2020,2024,CAM,10
+Alex Sandro,29,26-01-1991,180,80,Brazil,Juventus,Italian Serie A,85,31500000,120000,"LB, LM",Left,3,3,3,52000000,SUB,12,21-08-2015,2023,,
+Koke,28,08-01-1992,176,77,Spain,Atlético Madrid,Spain Primera Division,85,38000000,92000,"CM, RM, LM",Right,3,4,3,77900000,RCM,6,01-01-2011,2024,,
+L. Insigne,29,04-06-1991,163,59,Italy,Napoli,Italian Serie A,85,37500000,120000,"LW, CF",Right,3,4,4,63800000,LW,24,01-07-2010,2022,LW,10
+R. Mahrez,29,21-02-1991,179,67,Algeria,Manchester City,English Premier League,85,37500000,210000,"RW, RM",Left,3,4,5,69400000,RW,26,10-07-2018,2023,,
+E. Haaland,19,21-07-2000,194,88,Norway,Borussia Dortmund,German 1. Bundesliga,84,45000000,56000,ST,Left,2,3,3,85500000,LS,9,01-01-2020,2024,RS,23

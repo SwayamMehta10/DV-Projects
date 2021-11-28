@@ -1,0 +1,105 @@
+---
+title: "FIFA 21 Analysis"
+output: html_notebook
+---
+```{r}
+library(ggplot2)
+library(dplyr)
+library("gridExtra")
+data <- read.csv("players_21.csv")
+data
+```
+Football is a very interesting game because there doesn’t seem to be a perfect body type for the sport. The top two players in the world, Messi and Ronaldo, are on opposite sides of this spectrum yet have been competing for the Ballon d’Or for over a decade. With Messi being 5’7’’ with a skinny build and Ronaldo being a 6’2’’ physical freak of nature, we wanted to see how height compared with the top players in the world.
+```{r}
+stripchart <- ggplot(data, aes(overall, height_cm, col = overall)) + geom_point(size = 5)
+stripchart <- stripchart + ggtitle("Overall vs Height")
+stripchart
+```
+We found the distribution based on heights in cm and overall rating of every player in the world.
+
+Next, we will try determining the top 10 most valuable clubs in the world. The club value is calculated by summing up the player release clauses for each club.
+```{r}
+group_clubs <- group_by(data, club_name)
+club_value <- summarise(group_clubs, total_val = sum(release_clause_eur))
+top_10_valuable_clubs <- top_n(club_value, 10, total_val)
+top_10_valuable_clubs$club_name <-as.factor(top_10_valuable_clubs$club_name)
+ggplot(top_10_valuable_clubs, aes(x = reorder(club_name, total_val), y = total_val)) + labs(x = "Club") + geom_bar(stat = "identity", aes(fill=total_val)) + coord_flip() + ggtitle("Top 10 valuable clubs")
+```
+We found the top 10 most valuable clubs in the world by calculating the sum of the player’s release clauses for each club.
+They are: Liverpool, Manchester City, FC Barcelona, Real Madrid, Paris Saint German, FC Bayern Munchen, Juventus, Chelsea, Manchester United, Tottenham Hotspur.
+
+There are certain playing positions in football which are very crucial and there is high demand for world class players in those positions. Here we will see the distribution of player positions by value brackets.
+```{r}
+value_breaks <- c(0, 10000000, 20000000, 30000000, 40000000, 50000000, 60000000, 70000000, 80000000, 90000000, 100000000, Inf)
+value_labels <- c("0-10M", "10-20M", "20-30M", "30-40M", "40-50M","50-60M", "60-70M", "70-80M", "80-90M","90-100M","100M+")
+value_brackets <- cut(x=data$value_eur, breaks=value_breaks, labels=value_labels, include.lowest = TRUE)
+data <- mutate(data, value_brackets)
+gf1 <- filter(data, value_eur<30000000)
+g1 <- ggplot(gf1, aes(team_position)) + geom_bar(aes(fill=value_brackets)) + ggtitle("Position based on Value (0-50M)")
+gf2 <- filter(data,value_eur>30000000)
+g2 <- ggplot(gf2, aes(team_position)) + geom_bar(aes(fill=value_brackets)) + ggtitle("Position based on Value (50M +)")
+grid.arrange(g1, g2, ncol=1)
+```
+We found the distribution showing number of players by position which lie in certain value brackets of range 0-100M. Positions LS, LW & RCM have the most valuable players i.e. with value 80M+.
+
+To better understand the overall dataset, we can look at the preferred foot of all players.
+```{r}
+barplot<-ggplot(data ,aes(x=preferred_foot))+geom_bar(color="darkblue",fill="steelblue")+labs(title = "Left Foot  and Right foot players", x = "left foot vs right foot", y = "Count")
+barplot
+```
+We found the distribution of players who have a dominant “left” and “right” foot. We observed that there are more number of right foot players than left foot.
+
+The number one debate amongst soccer fans is who is the best club in the world? By graphing the top 5 clubs by average player overall we can get some insight into the top teams in club soccer as well as what leagues contribute the most number of top teams.
+```{r}
+avg_overall <- select(data, club_name, overall)
+avg_overall = aggregate(avg_overall[,2], list(avg_overall$club_name), mean)
+avg_overall = head(arrange(avg_overall, desc(x)), n=5)
+avg_overall = avg_overall %>% mutate_if(is.numeric, round)
+ggplot(avg_overall, aes(x=reorder(Group.1, x, sum), y=x, fill=Group.1)) + geom_bar(stat="identity") + coord_flip() + labs(title = "Top 5 Clubs by Average Player Overall", x = "", y = "Average Overall") + theme_grey() + geom_text(aes(label=x), hjust=1.0, color="black")
+```
+We found the top 5 clubs in the world based on the average overall ratings of their players. They are: Real Madrid, Liverpool, Athletico Madrid, Paris Saint German, FC Bayern Munchen.
+
+Next, we will look at the distribution of players in different leagues based on their age.
+```{r}
+g_age <- ggplot(data = data, aes(age))
+g_age <- g_age + geom_density(col="orange", aes(fill = league_name), alpha=0.5) + facet_grid(.~league_name) + ggtitle("Distribution based on Age and Position")
+g_age + geom_density(col="orange", aes(fill = league_name), alpha=0.5) + facet_grid(.~league_name) + ggtitle("Distribution based on Age and League")
+```
+We found the distribution of players in different leagues based on their age.
+
+There are some jersey numbers like 7 and 10 which are considered iconic in football and a lot of players prefer having one of such popular jersey numbers. We will take a look at the number of players for different jersey numbers upto 50 (jersey numbers above that are very rare in football).
+```{r}
+jerseys <- subset(data, team_jersey_number<=50)
+jerseysNum <- count(jerseys, team_jersey_number)
+barplot <- ggplot(jerseysNum, aes(x=team_jersey_number, y=n, fill=team_jersey_number)) + geom_bar(width = 0.75, stat = "identity") + labs(title = "Jersey Number Distribution", x = "Jersey Number", y = "Count")
+barplot
+```
+We found the distribution showing number of players having jersey numbers between 0-50. 1, 7 and 10 are the most commonly worn jerseys.
+
+Finding out the nationalities of the top players in the world could help us to understand who the best national teams in the world are.
+```{r}
+num <- count(data, nationality)
+barplot <- ggplot(num, aes(x="", y=n, fill=nationality)) + geom_bar(width = 1, stat = "identity")
+piechart <- barplot + coord_polar("y", start = 0) + labs(title = "Nationality Percentage") +geom_col(color = "black")
+piechart <- piechart + geom_text(aes(label = n), position = position_stack(vjust = 0.5))
+piechart
+```
+We found the distribution of players based on their nationality. The maximum number of top players belong to Spain and Germany.
+
+Next, we will look at the wage distribution in each leagues.
+Attributes – ‘wage_eur’ and ‘league_name’ – will be used for this.
+```{r}
+wage_league = select(data, league_name, wage_eur)
+ggplot(wage_league, aes(league_name, wage_eur, color=league_name)) + geom_point() + coord_flip() + theme_grey() + labs(title = "Wages per League", x = "League", y = "Wage")
+```
+We found the wage distribution of all players in each league. We can see that the range of wages is quite wide in Spain while very small in Italy.
+
+Lastly, finding out the clubs of the top players in the world could help us to understand which are the best clubs in the world are.
+```{r}
+num <- count(data, club_name)
+barplot <- ggplot(num, aes(x="", y=n, fill=club_name)) + geom_bar(width = 1, stat = "identity")
+piechart <- barplot + coord_polar("y", start = 0) + labs(title = "Club Percentage", x = "n", y = "club_name") + geom_col(color="black")
+piechart <- piechart + geom_text(aes(label = n), position = position_stack(vjust = 0.5))
+piechart
+```
+We found the distribution of clubs based on the number of players in each club. The maximum number of top players belong to the club Liverpool.
