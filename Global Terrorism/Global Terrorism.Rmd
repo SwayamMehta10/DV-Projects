@@ -1,0 +1,139 @@
+---
+title: "Global Terrorism"
+output: html_notebook
+---
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(leaflet)
+library(maps)
+df <- read_csv('klapeye-global-terrorism.csv')
+df <- drop_na(df, INJURED)
+df <- drop_na(df, DEAD)
+head(df)
+dim(df)
+
+Month_names = list("JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC")
+Month_numbers = list(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+
+df$YEAR <- as.numeric(format(df$DATE, "%Y"))
+df$MONTH <- as.numeric(format(df$DATE, "%m"))
+df$DAY <- as.numeric(format(df$DATE, "%d"))
+
+class(df$COORDINATES)
+df <- df %>% separate(COORDINATES, c("LATITUDE", "LONGITUDE"), sep = ",")
+```
+```{r}
+plot1 <- df %>% count(YEAR) %>% rename(Count = n) %>% ggplot(aes(YEAR, Count)) + geom_line(color = "firebrick2") + geom_point(color = "firebrick2") + labs(title = "Number of terrorist atacks by year") + theme_light()
+
+ggplotly(plot1)
+```
+The Plot given above uses ggplotly to interactively plot the number of terrorist attacks with the years that they took place in. The year 2006 had the highest number of terrorist attacks with the number of attacks being 914.
+```{r}
+# Heat map
+plot2 <- drop_na(df, `ATTACK TYPE`) %>% count(YEAR, `ATTACK TYPE`) %>% rename(Count = n) %>% mutate(`ATTACK TYPE` = reorder(`ATTACK TYPE`, Count)) %>% plot_ly(x = ~YEAR, y = ~`ATTACK TYPE`, z = ~Count, type = "heatmap")
+
+plot2 <- plot2 %>% layout(title = "Terrorist Attacks time series by Type", yaxis = list(title = "Count"))
+ 
+plot2
+```
+In the above plot Plotly is used to add a heat map that describes the number of attacks, the type of attacks and the years in which they took place. The highest density of attacks took place in 2007 and the type of attacks were explosions. Lowest number of attacks happen in the form of
+Kidnappings alone.
+```{r}
+#Stacked Bar Chart
+plot3 <- drop_na(df, `ATTACK TYPE`) %>% count(YEAR, `ATTACK TYPE`) %>% rename(Count = n) %>% ggplot(aes(YEAR, Count)) + geom_bar(aes(fill = `ATTACK TYPE`), stat = "identity") + scale_fill_brewer(palette = "Paired") + labs(title = "Terrorist Attacks time series by Type") + theme_light()
+  
+ggplotly(plot3)
+```
+The Plot above uses data similar to the previous plot but displays it in the form of a Stacked bar chart. The highest number of attacks took place in 2006 with the number being greater than 600. The split of the attack types can be seen as you hover over the plots along with the count and year. The required attack type can specifically be displayed from the legend on the right.
+``` {r}
+plot <- drop_na(df, `ATTACK TYPE`) %>% group_by(MONTH, `ATTACK TYPE`) %>% summarise(Deaths = sum(DEAD), Injured = sum(INJURED), Count = n()) %>% mutate(`ATTACK TYPE` = reorder(`ATTACK TYPE`, Count)) %>% plot_ly(hovertype = 'text', x = ~MONTH, y = ~`ATTACK TYPE`, z = ~Count, type = "heatmap", text = ~paste('Injured: ', Injured, '\nDeaths: ', Deaths))
+
+plot <- plot %>% layout(title = "Terrorist Attacks time series by Type", xaxis = list(ticktext = Month_names, tickvals = Month_numbers, tickmode = "array"), yaxis = list(title = "Count"))
+ 
+plot
+```
+The above heatmap plots the type of attacks along with the months of the year. On hovering the number of attacks, Deaths and injuries can be tallied. Highest frequency of deaths is in July and is caused by explosions.
+```{r}
+# Stacked Bar Chart
+r <- count(df, YEAR, COUNTRY, sort = TRUE)
+r <- r %>% filter(n > 20) %>% rename(Count = n)
+plot4 <- r %>% ggplot(aes(YEAR, Count)) + geom_bar(aes(fill = COUNTRY), stat = "identity") + scale_fill_brewer(palette = "Paired") + labs(title = "Overall frequency of Countries' Terrorist Attacks (more than 20 in a year)") + theme_light()
+
+ggplotly(plot4)
+```
+The above plot uses stacked bar charts to count the number of attacks that take place in different countries in different years with the minimum number of attacks being 20. In 2006 more than 589 attacks took place in Iraq, the highest recorded.
+```{r}
+# Violin Plot
+t <- count(df, COUNTRY, sort = TRUE)[1:10,]
+new_df <- merge(df, t, by = "COUNTRY", all = FALSE)
+plot5 <- new_df %>% ggplot(aes(COUNTRY, YEAR)) + geom_violin(fill = "firebrick2", color = "firebrick2") + coord_flip() + labs(title = "Visible surges at top 10 countries with most attacks") + theme_light()
+  
+ggplotly(plot5)
+```
+The above violin plot depicts the top 10 countries based on attacks and the years in which there were great surges or increased number of attacks. From the plot we can say that between 1995 and 2010 there was an increase in the number of attacks throughout the world.
+```{r}
+map(database = "world")
+points(x = df$LONGITUDE, y = df$LATITUDE, col = 'red', pch = 19, cex = .5)
+```
+The above plot uses the world map to plot the coordinates of attacks with red points.There is a greater number of attacks taking place around Europe and Asia.
+```{r}
+world <- map("world", fill = T, plot = F)
+new_df$COUNTRY <- str_replace(new_df$COUNTRY, "United Kingdom", "UK:Great Britain")
+new_df$COUNTRY <- str_replace(new_df$COUNTRY, "United States", "USA")
+
+leaflet_map <- function(data, map_obj){
+  map_obj$dataf <- left_join(data.frame(names = world$names, stringsAsFactors = F), data, by = c("names" = names(data)[1]))
+  pal <- colorNumeric("YlOrRd", domain = map_obj$dataf[[3]], na.color = "white")
+  strings <- sprintf(
+    paste(
+      "<strong>%s</strong><br/>", names(map_obj$dataf)[4], ifelse(is.numeric(map_obj$dataf[[4]]), ": %g ", ": %s "),
+      paste("<br/>", names(map_obj$dataf)[3], ifelse(is.numeric(map_obj$dataf[[3]]), ": %g ", ": %s ")),
+      paste("<br/>", names(map_obj$dataf)[2], ifelse(is.numeric(map_obj$dataf[[2]]), ": %g ", ": %s "))),
+    map_obj$dataf[[1]], map_obj$dataf[[4]], map_obj$dataf[[3]], map_obj$dataf[[2]])
+  labels <- strings %>% lapply(htmltools::HTML)
+  m <- leaflet(map_obj) %>% addTiles()
+  m <- m %>% addPolygons(
+    fillColor = ~pal(dataf[[3]]),
+    weight = 2,
+    opacity = 1,
+    color = "white",
+    dashArray = "3",
+    fillOpacity = 0.7,
+    highlight = highlightOptions(
+      weight = 5,
+      color = "#666",
+      dashArray = "",
+      fillOpacity = 0.7,
+      bringToFront = TRUE, stroke = 1),
+    label = labels
+    )
+  m <- m %>%
+    addLegend("bottomright", pal = pal, values = ~dataf[[3]],
+    title = names(map_obj$dataf)[3],
+    opacity = 1)
+  return(m)
+}
+```
+```{r}
+worldmap <- leaflet() %>% setView(lng = 0,lat = 0, zoom = 1) %>% addTiles()
+country_data <- df %>% group_by(COUNTRY) %>% summarise(Deaths = sum(DEAD), Injured = sum(INJURED), Events = n()) %>% arrange(order(COUNTRY)) %>% rename(names = COUNTRY)
+leaflet_map(country_data, world)
+```
+A proper functional map which is coloured based on the number of Injured persons for all attacks in the dataset. On hovering you can also get information such as deaths, events and injuries for each marked country. Iraq being red seems to have to most number of people getting injured due to attacks.
+```{r}
+new_df$DECADE <- sapply(new_df$YEAR, function(x) {
+  ifelse(x>=2020, "8) 2020s", 
+         ifelse(x>=2010,"7) 2010s",
+                ifelse(x>=2000,"6) 2000s",
+                       ifelse(x>=1990,"4) 1990s",
+                              ifelse(x>=1980,"3) 1980s",
+                                     ifelse(x>=1970,"2) 1970s",
+                                            "1) 1960s"))))))
+})
+
+plot_ly(new_df, hoverinfo = 'text', x = ~DEAD, y = ~INJURED, frame = ~DECADE, color = ~'red', colors = c('red'), alpha = 0.9, text = ~paste('Country: ', COUNTRY, '\nRegion: ', REGION, '\nDate: ', DATE, '\nPerpetrator: ', PERPETRATOR, '\nInjured : ', INJURED, '\nFatalities : ', DEAD)) %>% layout(title = "Animated History of incidents by Year", xaxis = list(title = "Deaths"), yaxis = list(title = "Injured"), showlegend = F) %>% animation_opts(1500, redraw = FALSE)
+```
+This is an animated scatterplot that allows us to compare the number of deaths with the number of injuries and manipulate it accordingly with the years. Between 2000 and 2010 the number of deaths increased as compared to other years.
