@@ -1,5 +1,5 @@
 # DV-Projects
-Small projects related to data visualization.
+Small R projects related to data visualization.
 ## FIFA 21 Analysis 
 Football is a popular sport played and enjoyed by many. Its popularity also extends to the video gaming world. FIFA is a football simulation video game series and is one of the best-selling video game franchises of all time. 
 <br> 
