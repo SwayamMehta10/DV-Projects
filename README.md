@@ -37,4 +37,3 @@ This analysis will take a look at various details and statistics of terrorist at
     </td>
 </tr>
 </table>
-
